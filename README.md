@@ -13,10 +13,12 @@ $ python format_price.py 8716521362.1800725
 
 You can also import format_price function in other module:
 
-```
+``` python
 from format_price import format_price
 print(format_price("2345.2312"))
-#output
+```
+Output:
+```
 2 345.2312
 ```
 
