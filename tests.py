@@ -5,7 +5,7 @@ from format_price import format_price
 class TestPrice(unittest.TestCase):
     def test_correct_price(self):
         price = format_price("2345.2312")
-        self.assertEqual(price, "2 345.2312")
+        self.assertEqual(price, "2 345.23")
 
     def test_letters_in_price(self):
         price = format_price("23.as")
@@ -26,11 +26,11 @@ class TestPrice(unittest.TestCase):
         self.assertEqual(price, "9 362 262")
 
     def test_spaces_in_price(self):
-        price = format_price("2 5573 23 21.40560")
-        self.assertEqual(price, "255 732 321.4056")
+        price = format_price("2 5573 23 21.41")
+        self.assertEqual(price, "255 732 321.41")
 
     def test_dots_in_price(self):
-        price = format_price("23.453.12.6641")
+        price = format_price("23.453.12.66")
         self.assertIsNone(price)
 
     def test_none(self):
