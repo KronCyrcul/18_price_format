@@ -25,10 +25,6 @@ class TestPrice(unittest.TestCase):
         price = format_price(9362262)
         self.assertEqual(price, "9 362 262")
 
-    def test_spaces_in_price(self):
-        price = format_price("2 5573 23 21.41")
-        self.assertEqual(price, "255 732 321.41")
-
     def test_dots_in_price(self):
         price = format_price("23.453.12.66")
         self.assertIsNone(price)
