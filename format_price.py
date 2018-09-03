@@ -1,7 +1,7 @@
 import sys
 
 
-def format_price(price)
+def format_price(price):
     try:
         price = round(float(price), 2)
     except (ValueError,TypeError):
