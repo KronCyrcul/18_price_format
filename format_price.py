@@ -9,15 +9,8 @@ def format_price(price):
         price = round(float(price), 2)
     except ValueError:
         return None
-
-    #if price has zero fractional part
-    if price-round(price) == 0:
-        price = round(price)
-
-    #if price has tenth part
-    elif price-round(price, 1) == 0:
-        price = round(price, 1)
-    full_price = str("{:,}".format(price)).replace(",", " ")
+    price = int(price) if price.is_integer() else price
+    full_price = "{:,}".format(price).replace(",", " ")
     return full_price
 
 
@@ -30,4 +23,4 @@ if __name__ == "__main__":
     if formated_price is None:
         sys.exit("Wrong price")
     else:
-        sys.exit(formated_price)
+        print(formated_price)
