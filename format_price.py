@@ -1,13 +1,10 @@
 import sys
 
 
-def format_price(price):
-    price = str(price).replace(" ", "")
-    if not price.replace(".", "", 1).isdigit():
-        return None
+def format_price(price)
     try:
         price = round(float(price), 2)
-    except ValueError:
+    except (ValueError,TypeError):
         return None
     price = int(price) if price.is_integer() else price
     full_price = "{:,}".format(price).replace(",", " ")
