@@ -32,6 +32,10 @@ class TestPrice(unittest.TestCase):
     def test_none(self):
         price = format_price(None)
         self.assertIsNone(price)
+        
+    def test_bool(self):
+        price = format_price(True)
+        self.assertIsNone(price)
 
 
 if __name__ == "__main__":
