@@ -2,7 +2,7 @@ import sys
 
 
 def format_price(price):
-    if not str(price).replace(".","",1).isdigit():
+    if not str(price).lstrip("-").replace(".","",1).isdigit():
         return None
     try:
         price = round(float(price), 2)
