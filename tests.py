@@ -37,6 +37,10 @@ class TestPrice(unittest.TestCase):
         price = format_price(True)
         self.assertIsNone(price)
 
+    def test_negative_number(self):
+        price = format_price(-3245.444)
+        self.assertEqual(price, "-3 245.44")
+
 
 if __name__ == "__main__":
     unittest.main()
